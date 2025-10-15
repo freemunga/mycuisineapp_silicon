@@ -2,13 +2,13 @@
 
 
 import os
-from langchain_ollama import ChatOllama
+from langchain_openai import ChatOpenAI
 import streamlit as st
 from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-llm = ChatOllama(model="gemma3:12b",api_key=OPENAI_API_KEY)
+llm = ChatOpenAI(model="gpt-4o",api_key=OPENAI_API_KEY)
 title_prompt = PromptTemplate(
     input_variables = ["Country"],
     template = """
