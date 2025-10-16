@@ -8,6 +8,7 @@ OPENAI_API_KEY = os.getenv(“OPENAI_API_KEY”)
 if not OPENAI_API_KEY:
     st.error(“OPENAI_API_KEY not found in environment variables.“)
     st.stop()
+    
 llm = ChatOpenAI(model=“gpt-4o”, api_key=OPENAI_API_KEY)
 title_prompt = PromptTemplate(
     input_variables=[“topic”],
