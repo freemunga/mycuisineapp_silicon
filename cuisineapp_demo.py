@@ -10,7 +10,7 @@ from langchain_core.output_parsers import StrOutputParser
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 llm = ChatOpenAI(model="gpt-4o",api_key=OPENAI_API_KEY)
 title_prompt = PromptTemplate(
-    input_variables = ["Country"],
+    input_variables = ["Topic"],
     template = """
     You are an experienced chef-cook.
     You need to find the favourite recipy based 
