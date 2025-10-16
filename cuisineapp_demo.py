@@ -8,6 +8,10 @@ from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+if not OPEN_API_KEY:
+    st.error("OPENAI_API_KEY not found")
+    st,stop()
+    
 llm = ChatOpenAI(model="gpt-4o",api_key=OPENAI_API_KEY)
 title_prompt = PromptTemplate(
     input_variables = ["Topic"],
